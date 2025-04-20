@@ -6,7 +6,7 @@ Application web Flask pour gérer la découverte et l'exploration de planètes e
 ## 🔧 Installation
 
 ```bash
-git clone <url_du_repo>
+git clone <https://github.com/juanangel77/spacexplorer>
 cd spacexplorer
 python -m venv venv
 venv\Scripts\activate
