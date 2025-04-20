@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ planet.name }} - Détail{% endblock %}
+
+{% block content %}
+<div class="planet-detail-card card">
+    <h2 class="planet-title">{{ planet.name }}</h2>
+    <p><strong>Type :</strong> {{ planet.type }}</p>
+    <p><strong>Distance :</strong> {{ planet.distance }} années-lumière</p>
+    <p><strong>Température :</strong> {{ planet.temperature }} °C</p>
+    <p><strong>Habitable :</strong> {{ 'Oui' if planet.habitable else 'Non' }}</p>
+    <p><strong>Description :</strong> {{ planet.description }}</p>
+    <p><strong>Date de découverte :</strong> {{ planet.discovery_date }}</p>
+</div>
+{% endblock %}

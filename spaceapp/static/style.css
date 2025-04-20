@@ -1,0 +1,206 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle, rgba(8, 8, 30, 1) 0%, rgba(30, 30, 70, 1) 100%);
+    color: #e0e0e0;
+    overflow-x: hidden;
+    /* Retiré l'image de fond des étoiles */
+    /* background-image: url('https://images.unsplash.com/photo-1506748686217-0c8e2c7e6f5b'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #00aaff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    color: #00aaff;
+    text-shadow: 0 0 15px #00aaff, 0 0 25px #00fff7;
+}
+
+/* Navigation */
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #00aaff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #00fff7;
+}
+
+/* Main Section */
+main {
+    padding: 2rem;
+    z-index: 1;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Card Design */
+.card {
+    background-color: rgba(15, 15, 40, 0.7);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #00aaff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.card h2, .card h3 {
+    color: #00aaff;
+    text-shadow: 0 0 8px #00aaff, 0 0 15px #00fff7;
+}
+
+.card a {
+    color: #00aaff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styling */
+input, select, textarea, button {
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    background: rgba(10, 10, 30, 0.9);
+    color: #ffffff;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00aaff;
+}
+
+button {
+    background-color: #00aaff;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #009ec3;
+}
+
+/* Special form elements */
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Form Cards (for adding and editing planets) */
+.mission-form-card, .planet-form-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #00aaff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    text-align: center;
+}
+
+.mission-form-card h2, .planet-form-card h2 {
+    font-size: 2.5rem;
+    color: #00aaff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 8px rgba(0, 209, 255, 0.7);
+}
+
+.mission-form-card label, .planet-form-card label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Links in Cards */
+a {
+    color: #00aaff;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid #00aaff;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Retrait de l'animation étoilée de fond */
+.starry-background {
+    /* Plus de fond animé */
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        margin: 0 0.5rem;
+    }
+
+    .container {
+        padding: 0.5rem;
+    }
+}

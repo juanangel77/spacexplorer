@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}SpaceXplorer{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Background effect with stars removed */
+        body {
+            background: linear-gradient(to bottom, #1a237e, #0d47a1);  /* Remains with a simple gradient background */
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 2px solid #00d1ff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #00d1ff;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #00d1ff;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-shadow: 0 0 10px #00ffe7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid #00d1ff;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #00d1ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-shadow: 0 0 10px #00ffe7;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 SpaceXplorer</h1>
+        <nav>
+            <a href="{{ url_for('index') }}" class="nav-link">Accueil</a>
+            <a href="{{ url_for('catalog') }}" class="nav-link">Catalogue</a>
+            <a href="{{ url_for('add_planet') }}" class="nav-link">Ajouter une planète</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2150 - SpaceXplorer Corporation | <a href="https://www.nasa.gov" target="_blank">Visitez NASA</a></p>
+    </footer>
+</body>
+</html>

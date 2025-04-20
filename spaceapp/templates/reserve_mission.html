@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Réserver une mission - SpaceXplorer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="card mission-form-card">
+        <h2>Réserver une mission 🚀</h2>
+        <form method="POST">
+            <label for="planet_id">Planète :</label>
+            <select name="planet_id" required>
+                {% for planet in planets %}
+                    <option value="{{ planet.id }}">{{ planet.name }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="explorer_id">Explorateur :</label>
+            <select name="explorer_id" required>
+                {% for explorer in explorers %}
+                    <option value="{{ explorer.id }}">{{ explorer.name }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="departure_date">Date de départ :</label>
+            <input type="date" name="departure_date" required><br>
+
+            <label for="duration">Durée (jours) :</label>
+            <input type="number" name="duration" required><br>
+
+            <button type="submit">Réserver</button>
+        </form>
+    </section>
+</div>
+{% endblock %}

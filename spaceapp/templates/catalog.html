@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Catalogue des planètes{% endblock %}
+
+{% block content %}
+<h2 class="page-title">Catalogue des planètes 🌍</h2>
+
+<!-- Formulaire de filtre -->
+<form method="get" action="{{ url_for('catalog') }}" class="filter-form card">
+    <div class="filter-section">
+        <label for="type">Type :</label>
+        <select name="type" id="type">
+            <option value="">Tous</option>
+            <option value="rocheuse">Rocheuse</option>
+            <option value="gazeuse">Gazeuse</option>
+            <option value="habitable">Habitable</option>
+        </select>
+    </div>
+
+    <div class="filter-section">
+        <label for="sort">Trier par :</label>
+        <select name="sort" id="sort">
+            <option value="distance">Distance</option>
+            <option value="temperature">Température</option>
+            <option value="size">Taille</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn">Filtrer</button>
+</form>
+
+<!-- Affichage des planètes -->
+<div class="planet-catalog">
+    {% for planet in planets %}
+    <div class="card planet-card">
+        <h3><a href="{{ url_for('planet_detail', planet_id=planet.id) }}" class="planet-name">{{ planet.name }}</a></h3>
+        <p><strong>Type :</strong> {{ planet.type }}</p>
+        <p><strong>Distance :</strong> {{ planet.distance }} années-lumière</p>
+        <p><strong>Température :</strong> {{ planet.temperature }} °C</p>
+        <p><strong>Habitable :</strong> {{ 'Oui' if planet.habitable else 'Non' }}</p>
+    </div>
+    {% else %}
+    <p>Aucune planète trouvée.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

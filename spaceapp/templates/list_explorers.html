@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="section-title">Liste des explorateurs</h2>
+
+<ul class="explorers-list">
+    {% for explorer in explorers %}
+        <li class="explorer-item">
+            <strong>{{ explorer.name }}</strong> - {{ explorer.speciality }} ({{ explorer.experience }} ans)
+        </li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('add_explorer') }}" class="btn-link">Ajouter un explorateur</a>
+
+{% endblock %}

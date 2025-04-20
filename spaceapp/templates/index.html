@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Accueil - SpaceXplorer{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <!-- Section de bienvenue -->
+  <section class="card welcome-section">
+      <h2>Bienvenue chez SpaceXplorer 🌌</h2>
+      <p>
+          En l’an 2150, l’humanité a colonisé de nombreuses planètes et explore chaque jour de nouveaux mondes.
+          Notre plateforme vous permet de consulter le catalogue intergalactique, d’ajouter vos découvertes
+          et de réserver des missions d’exploration.
+      </p>
+  </section>
+
+  <!-- Statistiques -->
+  <section class="card stats-section">
+      <h3>Statistiques de l'exploration 🚀</h3>
+      <ul>
+          <li><strong>Planètes découvertes :</strong> 1842</li>
+          <li><strong>Missions en cours :</strong> 326</li>
+          <li><strong>Explorateurs actifs :</strong> 78</li>
+          <li><strong>Habitables confirmées :</strong> 57</li>
+      </ul>
+  </section>
+
+  <!-- Liens pour commencer l'aventure -->
+  <section class="card adventure-section">
+      <h3>Commencez l'aventure :</h3>
+      <ul>
+          <li><a href="{{ url_for('catalog') }}" class="btn-link">Voir le catalogue des planètes</a></li>
+          <li><a href="{{ url_for('add_planet') }}" class="btn-link">Ajouter une nouvelle planète</a></li>
+          <li><a href="{{ url_for('reserve_mission') }}" class="btn-link">Réserver une mission</a></li>
+      </ul>
+  </section>
+
+  <!-- Explorateurs inscrits -->
+  <section class="card explorers-section">
+      <h3>🧑‍🚀 Explorateurs inscrits</h3>
+      {% if explorers %}
+        <ul>
+          {% for explorer in explorers %}
+            <li>
+              <strong>{{ explorer.name }}</strong> – {{ explorer.speciality }} ({{ explorer.experience }} ans d'expérience)
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>Aucun explorateur pour le moment.</p>
+      {% endif %}
+  </section>
+
+  <!-- Missions réservées -->
+  <section class="card missions-section">
+      <h3>📅 Missions réservées</h3>
+      {% if missions %}
+        <ul>
+          {% for mission in missions %}
+            <li>
+              <strong>{{ mission.explorer_name }}</strong> part explorer <strong>{{ mission.planet_name }}</strong>
+              le {{ mission.departure_date }} pour {{ mission.duration }} jours.
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>Aucune mission pour le moment.</p>
+      {% endif %}
+  </section>
+
+</div>
+{% endblock %}
